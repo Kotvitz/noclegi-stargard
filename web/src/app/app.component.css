@@ -6,6 +6,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .logo {
@@ -30,6 +34,7 @@
   list-style: none;
   display: flex;
   gap: 20px;
+  margin-right: 100px;
 }
 
 .menu-link {
