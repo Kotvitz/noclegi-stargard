@@ -1,0 +1,41 @@
+# Node dependencies
+/node_modules
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+
+# Logs
+/logs
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# IDE and editor files
+.idea
+.vscode
+*.sublime-project
+*.sublime-workspace
+
+# Compiled TypeScript
+*.js
+*.js.map
+
+# Unit test coverage
+/coverage
+
+# End-to-end test output
+/e2e/*.log
+
+# Dependency directories
+/jspm_packages/
+/bower_components/
+
+# Angular generated files
+*.ngsummary.json
+*.ngfactory.ts
