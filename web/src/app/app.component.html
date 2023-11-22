@@ -36,7 +36,16 @@
     <div class="image-container">
       <img src="https://images.pexels.com/photos/8960996/pexels-photo-8960996.jpeg" class="responsive-image" width="1080">
     </div>
-    <div class="contact-info">
+    <div class="page-content-container">
+      <hr>
+      <h2>Galeria</h2>
+      <div class="gallery-container">
+        <div *ngFor="let filename of imageFilenames" class="gallery-image">
+          <img src="{{ 'assets/images/' + filename }}">
+        </div>
+      </div>
+    </div>
+    <div class="page-content-container">
       <hr>
       <h2>Skontaktuj się z nami!</h2>
       <div class="map-container">
