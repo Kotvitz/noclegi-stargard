@@ -12,7 +12,7 @@
     </div>
     <ul class="menu-links">
       <li><a href="#" class="menu-link"><i class="fa-solid fa-rectangle-list"></i>Poproś o wycenę</a></li>
-      <li><a href="#" class="menu-link"><i class="fa-solid fa-phone"></i>Zadzwoń teraz</a></li>
+      <li><a href="tel:+48-516-628-015" class="menu-link"><i class="fa-solid fa-phone"></i>Zadzwoń teraz</a></li>
       <li><a (click)="getRoute()" class="menu-link"><i class="fa-solid fa-diamond-turn-right"></i>Wyznacz trasę</a></li>
     </ul>
   </div>
@@ -62,7 +62,7 @@
         <div class="contact-container">
           <h3>Kontakt</h3>
           <div class="phone-container">
-            <button class="contact-button">Zadzwoń teraz</button>
+            <button class="contact-button" (click)="makePhoneCall()">Zadzwoń teraz</button>
             <div>516 628 015</div>
           </div>
         </div>

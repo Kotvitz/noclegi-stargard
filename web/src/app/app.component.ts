@@ -40,4 +40,10 @@ export class AppComponent {
       }
     )
   }
+
+  makePhoneCall(): void {
+    const phoneNumber = '+48-516-628-015';
+    const telUri = `tel:${phoneNumber}`;
+    window.open(telUri, '_self');
+  }
 }
