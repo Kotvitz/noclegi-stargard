@@ -26,4 +26,18 @@ export class AppComponent {
   openGalleryImage(imageUrl: string): void {
     window.open(imageUrl, '_blank');
   }
+
+  getRoute(): void {
+    const destinationAddress = 'NOCLEGI+STARGARD+SYLWIA+KREKORA';
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const currentLocation = `${position.coords.latitude},${position.coords.longitude}`;
+        const mapsUrl = `https://www.google.com/maps/dir/${currentLocation}/${destinationAddress}`;
+        window.open(mapsUrl, '_blank');
+      },
+      (error) => {
+        console.error('Error getting current location:', error);
+      }
+    )
+  }
 }

@@ -13,7 +13,7 @@
     <ul class="menu-links">
       <li><a href="#" class="menu-link"><i class="fa-solid fa-rectangle-list"></i>Poproś o wycenę</a></li>
       <li><a href="#" class="menu-link"><i class="fa-solid fa-phone"></i>Zadzwoń teraz</a></li>
-      <li><a href="#" class="menu-link"><i class="fa-solid fa-diamond-turn-right"></i>Wyznacz trasę</a></li>
+      <li><a (click)="getRoute()" class="menu-link"><i class="fa-solid fa-diamond-turn-right"></i>Wyznacz trasę</a></li>
     </ul>
   </div>
   <div class="side-menu" #sideMenu>
@@ -69,7 +69,7 @@
         <div class="contact-container">
           <h3>Adres</h3>
           <div class="address-container">
-            <button class="contact-button">Wyznacz trasę</button>
+            <button class="contact-button" (click)="getRoute()">Wyznacz trasę</button>
             <div class="address-details">
               <div>Źródlana 6</div>
               <div>73-110 Stargard</div>
