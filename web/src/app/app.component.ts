@@ -22,4 +22,8 @@ export class AppComponent {
         hamburgerMenuElement.innerHTML === '☰' ? '&#10006;' : '☰';
     }
   }
+
+  openGalleryImage(imageUrl: string): void {
+    window.open(imageUrl, '_blank');
+  }
 }

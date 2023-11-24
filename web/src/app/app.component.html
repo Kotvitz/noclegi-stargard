@@ -40,7 +40,7 @@
       <hr>
       <h2>Galeria</h2>
       <div class="gallery-container">
-        <div *ngFor="let filename of imageFilenames" class="gallery-image">
+        <div *ngFor="let filename of imageFilenames" class="gallery-image" (click)="openGalleryImage('assets/images/' + filename)">
           <img src="{{ 'assets/images/' + filename }}">
         </div>
       </div>
