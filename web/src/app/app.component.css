@@ -193,6 +193,49 @@ button:hover {
   width: 100%;
 }
 
+.news-container {
+  display: flex;
+  flex-direction: column; 
+  padding: 0 18px;
+}
+
+.news-post {
+  margin-bottom: 60px;
+}
+
+.news-image-container {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.news-image {
+  width: 100%;
+}
+
+.news-content-container {
+  margin-bottom: 30px;
+}
+
+.news-content {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.news-phone {
+  color: #DDAA44;
+  border-bottom: 1px solid;
+  font-weight: 800;
+  padding-bottom: 8px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .news-post {
+    width: 48%;
+  }
+}
+
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
@@ -266,6 +309,10 @@ button:hover {
 }
 
 @media (min-width: 992px) {
+  .news-post {
+    width: 32%;
+  }
+
   .contact-details {
     flex-direction: row;
   }
