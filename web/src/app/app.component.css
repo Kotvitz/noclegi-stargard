@@ -12,6 +12,10 @@ h2 {
   color: #202124;
 }
 
+a {
+  text-decoration: none;
+}
+
 button {
   background-color: #DDAA44;
   color: #fff;
@@ -60,7 +64,6 @@ button:hover {
 }
 
 .menu-link {
-  text-decoration: none;
   color: #DDAA44;
   transition: color 0.3s ease;
   align-items: center;
@@ -136,7 +139,6 @@ button:hover {
   padding: 15px;
   color: #DDAA44;
   cursor: pointer;
-  text-decoration: none;
 }
 
 .side-menu a:hover {
