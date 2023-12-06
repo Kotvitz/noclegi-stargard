@@ -42,7 +42,7 @@ button:hover {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 3;
 }
 
 .menu-accommodation {
@@ -150,6 +150,7 @@ button:hover {
   background-color: #fff;
   box-shadow: 0 0 5px grey;
   transition: 0.4s;
+  z-index: 2;
 }
 
 .side-menu ul {
@@ -220,6 +221,7 @@ button:hover {
   margin-bottom: 40px;
   max-width: 1080px;
   width: 100%;
+  z-index: 1;
 }
 
 .news-container {
