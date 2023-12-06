@@ -15,14 +15,13 @@
       <li><a (click)="getRoute()" class="menu-link"><i class="fa-solid fa-diamond-turn-right"></i>Wyznacz trasę</a></li>
     </ul>
   </div>
-  <div class="side-menu" #sideMenu>
+  <nav class="side-menu" #sideMenu>
     <ul>
-      <li><a href="#">Aktualności</a></li>
-      <li><a href="#">Opinie</a></li>
-      <li><a href="#">Galeria</a></li>
-      <li><a href="#">Kontakt</a></li>
+      <li><a appSmoothScroll [targetId]="'news'">Aktualności</a></li>
+      <li><a appSmoothScroll [targetId]="'gallery'">Galeria</a></li>
+      <li><a appSmoothScroll [targetId]="'contact'">Kontakt</a></li>
     </ul>
-  </div>
+  </nav>
   <div class="main-content">
     <div class="accommodation-info">
       <h1 class="main-heading">Noclegi pracownicze Stargard</h1>
@@ -32,7 +31,7 @@
     <div class="image-container">
       <img src="https://images.pexels.com/photos/8960996/pexels-photo-8960996.jpeg" class="responsive-image" width="1080">
     </div>
-    <div class="page-content-container">
+    <section class="page-content-container" id="news">
       <hr>
       <h2>Aktualności</h2>
       <div class="news-container">
@@ -46,8 +45,8 @@
           <a class="news-phone" href="tel:+48-516-628-015">Zadzwoń teraz</a>
         </div>
       </div>
-    </div>
-    <div class="page-content-container">
+    </section>
+    <section class="page-content-container" id="gallery">
       <hr>
       <h2>Galeria</h2>
       <div class="gallery-container">
@@ -55,8 +54,8 @@
           <img src="{{ 'assets/images/' + filename }}">
         </div>
       </div>
-    </div>
-    <div class="page-content-container">
+    </section>
+    <section class="page-content-container" id="contact">
       <hr>
       <h2>Skontaktuj się z nami!</h2>
       <div class="map-container">
@@ -126,7 +125,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
   <div class="bottom-bar">
     <a href="tel:+48-516-628-015" class="bottom-bar-link"><i class="fa-solid fa-phone"></i>Zadzwoń teraz</a>
