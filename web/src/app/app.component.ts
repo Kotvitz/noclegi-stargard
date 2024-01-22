@@ -7,7 +7,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class AppComponent {
   title = 'web';
-  imageFilenames = ['IMG_3928.jpeg', 'IMG_3902.jpeg', 'IMG_3907.jpeg', 'IMG_3908.jpeg', 'IMG_3903.jpeg', 'IMG_4282.jpeg', 'IMG_3913.jpeg', 'IMG_4280.jpeg', 'IMG_4281.jpeg',
+  imageFilenames = ['IMG_3928.jpeg', 'IMG_3902.jpeg', 'IMG_3907.jpeg', 'IMG_3908.jpeg', 'IMG_3903.jpeg', 'IMG_3913.jpeg', 'IMG_4280.jpeg', 'IMG_4281.jpeg',
   'IMG_3925.jpeg', 'IMG_3780.jpeg']
   @ViewChild('sideMenu') sideMenu!: ElementRef;
   @ViewChild('hamburgerMenu') hamburgerMenu!: ElementRef;
