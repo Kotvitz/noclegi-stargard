@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +9,16 @@ export class AppComponent {
   title = 'web';
   imageFilenames = ['IMG_3928.jpeg', 'IMG_3902.jpeg', 'IMG_3907.jpeg', 'IMG_3908.jpeg', 'IMG_3903.jpeg', 'IMG_3913.jpeg', 'IMG_4280.jpeg', 'IMG_4281.jpeg',
   'IMG_3925.jpeg', 'IMG_3780.jpeg']
-  @ViewChild('sideMenu') sideMenu!: ElementRef;
-  @ViewChild('hamburgerMenu') hamburgerMenu!: ElementRef;
 
   toggleSideMenu() {
-    if (this.sideMenu.nativeElement && this.hamburgerMenu.nativeElement) {
-      const sideMenuElement = this.sideMenu.nativeElement as HTMLElement;
-      const hamburgerMenuElement = this.hamburgerMenu.nativeElement as HTMLElement;
-
-      sideMenuElement.style.left = sideMenuElement.style.left === '0px' ? '-400px' : '0px';
-
-      hamburgerMenuElement.innerHTML =
-        hamburgerMenuElement.innerHTML === '☰' ? '&#10006;' : '☰';
+    const sideMenuElement = document.querySelector('.side-menu') as HTMLElement;
+    const hamburgerMenuElement = document.querySelector('.menu-icon') as HTMLElement;
+  
+    if (sideMenuElement && hamburgerMenuElement) {
+      const isOpen = sideMenuElement.style.left === '0px';
+  
+      sideMenuElement.style.left = isOpen ? '-400px' : '0px';
+      hamburgerMenuElement.innerHTML = isOpen ? '&#9776;' : '&#10006;';
     }
   }
 
