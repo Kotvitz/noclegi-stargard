@@ -14,10 +14,6 @@
 # Firebase cache
 .firebase/
 
-# Firebase configuration files
-.firebaserc
-firebase.json
-
 # OS-specific files
 .DS_Store
 Thumbs.db
