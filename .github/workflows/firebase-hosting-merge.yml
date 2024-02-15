@@ -18,4 +18,4 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NOCLEGI_STARGARD_WEBSITE }}'
           channelId: live
           projectId: noclegi-stargard-website
-          entryPoint: 'web/firebase.json'
+          entryPoint: 'web'
