@@ -14,17 +14,12 @@
     ],
     "redirects": [
       {
-        "source": "/",
-        "destination": "https://noclegidlafirmstargard.pl",
-        "type": 301
-      },
-      {
         "source": "/index.html",
         "destination": "/",
         "type": 301
       },
       {
-        "source": "/(.*)",
+        "source": "**",
         "destination": "https://noclegidlafirmstargard.pl/$1",
         "type": 301
       }
