@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>  
 </head>
 <body>
   <nav class="navbar">
@@ -49,7 +50,10 @@
       </section>
     </div>
     <div class="image-container">
-      <img src="assets/images/welcome-image.jpeg" alt="noclegi stargard" class="responsive-image" width="1080" loading="lazy">
+      <picture>
+        <source srcset="assets/images/welcome-image.webp" type="image/webp">
+        <img src="assets/images/welcome-image.jpg" alt="noclegi stargard" class="responsive-image" width="1080" loading="lazy">
+      </picture>
     </div>
     <section class="page-content-container" id="news">
       <hr>
@@ -57,7 +61,10 @@
       <div class="news-container">
         <article class="news-post">
           <figure class="news-image-container">
-            <img class="news-image" src="assets/images/2023-10-28.jpg" alt="noclegi pracownicze stargard" loading="lazy">
+            <picture>
+              <source srcset="assets/images/2023-10-28.webp" type="image/webp">
+              <img class="news-image" src="assets/images/2023-10-28.jpg" alt="noclegi pracownicze stargard" loading="lazy">
+            </picture>
           </figure>
           <div class="news-content-container">
             <p class="news-content">Noclegi pracownicze / noclegi dla gosci weselnych</p>
