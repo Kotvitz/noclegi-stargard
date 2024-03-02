@@ -7,8 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'web';
-  imageFilenames = ['IMG_3928.jpeg', 'IMG_3902.jpeg', 'IMG_3907.jpeg', 'IMG_3908.jpeg', 'IMG_3903.jpeg', 'IMG_3913.jpeg', 'IMG_4280.jpeg', 'IMG_4281.jpeg',
-  'IMG_3925.jpeg', 'IMG_3780.jpeg']
+  imageFilenames = ['IMG_3928', 'IMG_3902', 'IMG_3907', 'IMG_3908', 'IMG_3903', 'IMG_3913', 'IMG_4280', 'IMG_4281', 'IMG_3925', 'IMG_3780']
 
   toggleSideMenu() {
     const sideMenuElement = document.querySelector('.side-menu') as HTMLElement;
@@ -22,9 +21,17 @@ export class AppComponent {
     }
   }
 
-  openGalleryImage(imageUrl: string): void {
+  openGalleryImage(filename: string): void {
+    const webpSupported = this.browserSupportsWebP();
+    const imageExtension = webpSupported ? 'webp' : 'jpg';
+    const imageUrl = `assets/images/${filename}.${imageExtension}`;
     window.open(imageUrl, '_blank');
   }
+  
+  browserSupportsWebP(): boolean {
+    const elem = document.createElement('canvas');
+    return !!(elem.getContext && elem.getContext('2d') && elem.toDataURL('image/webp').indexOf('data:image/webp') === 0);
+  }  
 
   getRoute(): void {
     const destinationAddress = 'NOCLEGI+STARGARD+SYLWIA+KREKORA';

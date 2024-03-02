@@ -78,9 +78,12 @@
       <h2>Galeria</h2>
       <div class="gallery-container">
         <ng-container *ngFor="let filename of imageFilenames">
-          <div class="gallery-image" (click)="openGalleryImage('assets/images/' + filename)">
-            <img src="{{ 'assets/images/' + filename }}" alt="pokoje stargard" loading="lazy">
-          </div>
+          <figure class="gallery-image" (click)="openGalleryImage(filename)">
+            <picture>
+              <source [srcset]="'assets/images/' + filename + '.webp'" type="image/webp">
+              <img [src]="'assets/images/' + filename + '.jpg'" alt="pokoje stargard" loading="lazy">
+            </picture>
+          </figure>
         </ng-container>
       </div>
     </section>
