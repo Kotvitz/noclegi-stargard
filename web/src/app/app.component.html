@@ -1,184 +1,222 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-281NWKTHPQ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-281NWKTHPQ');
-  </script>
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>  
-</head>
-<body>
-  <nav class="navbar">
-    <div class="menu-accommodation">
-      <div class="menu-icon" (click)="toggleSideMenu()" aria-label="Toggle Side Menu">&#9776;</div>
-      <a href="#" class="menu-link">Noclegi pracownicze Stargard</a>
+<nav class="navbar">
+  <div class="menu-accommodation">
+    <div
+      class="menu-icon"
+      (click)="toggleSideMenu()"
+      aria-label="Toggle Side Menu"
+    >
+      &#9776;
     </div>
-    <ul class="menu-links">
-      <li><a href="tel:+48-516-628-015" class="menu-link"><i class="fa-solid fa-phone"></i>Zadzwoń teraz</a></li>
-      <li><a (click)="getRoute()" class="menu-link"><i class="fa-solid fa-diamond-turn-right"></i>Wyznacz trasę</a></li>
-    </ul>
-  </nav>
-  <nav class="side-menu" #sideMenu>
-    <ul>
-      <li><a appSmoothScroll [targetId]="'news'">Aktualności</a></li>
-      <li><a appSmoothScroll [targetId]="'gallery'">Galeria</a></li>
-      <li><a appSmoothScroll [targetId]="'contact'">Kontakt</a></li>
-    </ul>
-  </nav>
-  <main>
-    <div class="accommodation-info">
-      <h1 class="main-heading">Noclegi dla firm Stargard</h1>
-      <section>
-          <h2 class="sub-heading">Wybór pokoi</h2>
-          <ul>
-            <li>Oferujemy pokoje dwu-, trzy- i czteroosobowe</li>
-            <li>Ceny już od <b>50 zł!</b></li>
-          </ul>
-      </section>
-      <section>
-          <h2 class="sub-heading">Cechy pokoi</h2>
-          <ul>
-            <li>Każdy pokój posiada prywatną łazienkę, telewizor z płaskim ekranem oraz pojedyncze łóżka o szerokości 90 cm</li>
-            <li>Oferujemy naszym gościom dostęp do w pełni wyposażanych aneksów kuchennych oraz dużej kuchni do przygotowywania większej ilości posiłków</li>
-          </ul>
-      </section>
-      <section>
-          <h2 class="sub-heading">Udogodnienia obiektu</h2>
-          <ul>
-            <li>Na terenie zamykanej posesji jest bezpłatny, monitorowany parking</li>
-            <li>Obiekt znajduje się w cichej i spokojnej okolicy sąsiadującej z terenem Natura 2000</li>
-            <li>Możliwość zamówienia noclegu z wyżyweniem!</li>
-            <li>Cena zależna od ilości osób, długości pobytu oraz pory roku</li>
-          </ul>
-      </section>
-    </div>
-    <div class="image-container">
-      <picture>
-        <source srcset="assets/images/welcome-image.webp" type="image/webp">
-        <img src="assets/images/welcome-image.jpg" alt="noclegi stargard" class="responsive-image" width="1080" loading="lazy">
-      </picture>
-    </div>
-    <section class="page-content-container" id="news">
-      <hr>
-      <h2>Aktualności</h2>
-      <div class="news-container">
-        <article class="news-post">
-          <figure class="news-image-container">
-            <picture>
-              <source srcset="assets/images/2023-10-28.webp" type="image/webp">
-              <img class="news-image" src="assets/images/2023-10-28.jpg" alt="noclegi pracownicze stargard" loading="lazy">
-            </picture>
-          </figure>
-          <div class="news-content-container">
-            <p class="news-content">Noclegi pracownicze / noclegi dla gosci weselnych</p>
-            <a class="news-phone" href="tel:+48-516-628-015">Zadzwoń teraz</a>
-          </div>
-        </article>
-      </div>
-    </section>
-    <section class="page-content-container" id="gallery">
-      <hr>
-      <h2>Galeria</h2>
-      <div class="gallery-container">
-        <ng-container *ngFor="let filename of imageFilenames">
-          <figure class="gallery-image" (click)="openGalleryImage(filename)">
-            <picture>
-              <source [srcset]="'assets/images/' + filename + '.webp'" type="image/webp">
-              <img [src]="'assets/images/' + filename + '.jpg'" alt="pokoje stargard" loading="lazy">
-            </picture>
-          </figure>
-        </ng-container>
-      </div>
-    </section>
-    <section class="page-content-container" id="contact">
-      <hr>
-      <h2>Skontaktuj się z nami!</h2>
-      <div class="map-container">
-        <iframe
-          class="responsive-iframe"
-          title="Noclegi Stargard lokalizacja"
-          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAaWVB18WyeIOe5HeJp5HxosmHWLufj4kw&q=NOCLEGI+STARGARD+SYLWIA+KREKORA"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
-      </div>
-      <div class="contact-details">
-        <div class="contact-container">
-          <h3>Kontakt</h3>
-          <div class="phone-container">
-            <button class="contact-button" (click)="makePhoneCall()">Zadzwoń teraz</button>
-            <div>
-              <a href="tel:+48516628015"><b>516 628 015</b></a>
-            </div>
-            <div>lub</div>
-            <div>
-              <a href="tel:+48512966992"><b>512 966 992</b></a>
-            </div>
-          </div>
-        </div>
-        <div class="contact-container">
-          <h3>Adres</h3>
-          <div class="address-container">
-            <button class="contact-button" (click)="getRoute()">Wyznacz trasę</button>
-            <address class="address-details">
-              <div>Źródlana 6</div>
-              <div>73-110 Stargard</div>
-              <div>Polska</div>
-            </address>
-            <br>
-            <div class="address-additional-info">
-              <i>Obiekt jest usytuowany 10 minut od centrum miasta</i>
-            </div>
-            <br>
-          </div>
-        </div>
-        <div class="contact-container">
-          <h3>Godziny otwarcia</h3>
-          <div class="opening-hours-container">
-            <table class="opening-hours">
-              <tbody>
-                <tr>
-                  <th class="day-of-week">pon.:</th>
-                  <td>Czynne całą dobę</td>
-                </tr>
-                <tr>
-                  <th class="day-of-week">wt.:</th>
-                  <td>Czynne całą dobę</td>
-                </tr>
-                <tr>
-                  <th class="day-of-week">śr.:</th>
-                  <td>Czynne całą dobę</td>
-                </tr>
-                <tr>
-                  <th class="day-of-week">czw.:</th>
-                  <td>Czynne całą dobę</td>
-                </tr>
-                <tr>
-                  <th class="day-of-week">pt.:</th>
-                  <td>Czynne całą dobę</td>
-                </tr>
-                <tr>
-                  <th class="day-of-week">sob.:</th>
-                  <td>Czynne całą dobę</td>
-                </tr>
-                <tr>
-                  <th class="day-of-week">niedz.:</th>
-                  <td>Czynne całą dobę</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <div class="bottom-bar">
-    <a href="tel:+48-516-628-015" class="bottom-bar-link"><i class="fa-solid fa-phone"></i>Zadzwoń teraz</a>
-    <a (click)="getRoute()" class="bottom-bar-link"><i class="fa-solid fa-diamond-turn-right"></i>Wyznacz trasę</a>
+    <a href="#" class="menu-link">Noclegi pracownicze Stargard</a>
   </div>
-</body>
+  <ul class="menu-links">
+    <li>
+      <a href="tel:+48-516-628-015" class="menu-link"
+        ><i class="fa-solid fa-phone"></i>Zadzwoń teraz</a
+      >
+    </li>
+    <li>
+      <a (click)="getRoute()" class="menu-link"
+        ><i class="fa-solid fa-diamond-turn-right"></i>Wyznacz trasę</a
+      >
+    </li>
+  </ul>
+</nav>
+<nav class="side-menu" #sideMenu>
+  <ul>
+    <li><a appSmoothScroll [targetId]="'news'">Aktualności</a></li>
+    <li><a appSmoothScroll [targetId]="'gallery'">Galeria</a></li>
+    <li><a appSmoothScroll [targetId]="'contact'">Kontakt</a></li>
+  </ul>
+</nav>
+<main>
+  <div class="accommodation-info">
+    <h1 class="main-heading">Noclegi dla firm Stargard</h1>
+    <section>
+      <h2 class="sub-heading">Wybór pokoi</h2>
+      <ul>
+        <li>Oferujemy pokoje dwu-, trzy- i czteroosobowe</li>
+        <li>Ceny już od <b>50 zł!</b></li>
+      </ul>
+    </section>
+    <section>
+      <h2 class="sub-heading">Cechy pokoi</h2>
+      <ul>
+        <li>
+          Każdy pokój posiada prywatną łazienkę, telewizor z płaskim ekranem
+          oraz pojedyncze łóżka o szerokości 90 cm
+        </li>
+        <li>
+          Oferujemy naszym gościom dostęp do w pełni wyposażanych aneksów
+          kuchennych oraz dużej kuchni do przygotowywania większej ilości
+          posiłków
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2 class="sub-heading">Udogodnienia obiektu</h2>
+      <ul>
+        <li>
+          Na terenie zamykanej posesji jest bezpłatny, monitorowany parking
+        </li>
+        <li>
+          Obiekt znajduje się w cichej i spokojnej okolicy sąsiadującej z
+          terenem Natura 2000
+        </li>
+        <li>Możliwość zamówienia noclegu z wyżyweniem!</li>
+        <li>Cena zależna od ilości osób, długości pobytu oraz pory roku</li>
+      </ul>
+    </section>
+  </div>
+  <div class="image-container">
+    <picture>
+      <source srcset="assets/images/welcome-image.webp" type="image/webp" />
+      <img
+        src="assets/images/welcome-image.jpg"
+        alt="noclegi stargard"
+        class="responsive-image"
+        width="1080"
+        loading="lazy"
+      />
+    </picture>
+  </div>
+  <section class="page-content-container" id="news">
+    <hr />
+    <h2>Aktualności</h2>
+    <div class="news-container">
+      <article class="news-post">
+        <figure class="news-image-container">
+          <picture>
+            <source srcset="assets/images/2023-10-28.webp" type="image/webp" />
+            <img
+              class="news-image"
+              src="assets/images/2023-10-28.jpg"
+              alt="noclegi pracownicze stargard"
+              loading="lazy"
+            />
+          </picture>
+        </figure>
+        <div class="news-content-container">
+          <p class="news-content">
+            Noclegi pracownicze / noclegi dla gosci weselnych
+          </p>
+          <a class="news-phone" href="tel:+48-516-628-015">Zadzwoń teraz</a>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="page-content-container" id="gallery">
+    <hr />
+    <h2>Galeria</h2>
+    <div class="gallery-container">
+      <ng-container *ngFor="let filename of imageFilenames">
+        <figure class="gallery-image" (click)="openGalleryImage(filename)">
+          <picture>
+            <source
+              [srcset]="'assets/images/' + filename + '.webp'"
+              type="image/webp"
+            />
+            <img
+              [src]="'assets/images/' + filename + '.jpg'"
+              alt="pokoje stargard"
+              loading="lazy"
+            />
+          </picture>
+        </figure>
+      </ng-container>
+    </div>
+  </section>
+  <section class="page-content-container" id="contact">
+    <hr />
+    <h2>Skontaktuj się z nami!</h2>
+    <div class="map-container">
+      <iframe
+        class="responsive-iframe"
+        title="Noclegi Stargard lokalizacja"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAaWVB18WyeIOe5HeJp5HxosmHWLufj4kw&q=NOCLEGI+STARGARD+SYLWIA+KREKORA"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+    <div class="contact-details">
+      <div class="contact-container">
+        <h3>Kontakt</h3>
+        <div class="phone-container">
+          <button class="contact-button" (click)="makePhoneCall()">
+            Zadzwoń teraz
+          </button>
+          <div>
+            <a href="tel:+48516628015"><b>516 628 015</b></a>
+          </div>
+          <div>lub</div>
+          <div>
+            <a href="tel:+48512966992"><b>512 966 992</b></a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-container">
+        <h3>Adres</h3>
+        <div class="address-container">
+          <button class="contact-button" (click)="getRoute()">
+            Wyznacz trasę
+          </button>
+          <address class="address-details">
+            <div>Źródlana 6</div>
+            <div>73-110 Stargard</div>
+            <div>Polska</div>
+          </address>
+          <br />
+          <div class="address-additional-info">
+            <i>Obiekt jest usytuowany 10 minut od centrum miasta</i>
+          </div>
+          <br />
+        </div>
+      </div>
+      <div class="contact-container">
+        <h3>Godziny otwarcia</h3>
+        <div class="opening-hours-container">
+          <table class="opening-hours">
+            <tbody>
+              <tr>
+                <th class="day-of-week">pon.:</th>
+                <td>Czynne całą dobę</td>
+              </tr>
+              <tr>
+                <th class="day-of-week">wt.:</th>
+                <td>Czynne całą dobę</td>
+              </tr>
+              <tr>
+                <th class="day-of-week">śr.:</th>
+                <td>Czynne całą dobę</td>
+              </tr>
+              <tr>
+                <th class="day-of-week">czw.:</th>
+                <td>Czynne całą dobę</td>
+              </tr>
+              <tr>
+                <th class="day-of-week">pt.:</th>
+                <td>Czynne całą dobę</td>
+              </tr>
+              <tr>
+                <th class="day-of-week">sob.:</th>
+                <td>Czynne całą dobę</td>
+              </tr>
+              <tr>
+                <th class="day-of-week">niedz.:</th>
+                <td>Czynne całą dobę</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<div class="bottom-bar">
+  <a href="tel:+48-516-628-015" class="bottom-bar-link"
+    ><i class="fa-solid fa-phone"></i>Zadzwoń teraz</a
+  >
+  <a (click)="getRoute()" class="bottom-bar-link"
+    ><i class="fa-solid fa-diamond-turn-right"></i>Wyznacz trasę</a
+  >
+</div>
