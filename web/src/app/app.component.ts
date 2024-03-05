@@ -39,10 +39,11 @@ export class AppComponent {
       (position) => {
         const currentLocation = `${position.coords.latitude},${position.coords.longitude}`;
         const mapsUrl = `https://www.google.com/maps/dir/${currentLocation}/${destinationAddress}`;
-        window.open(mapsUrl, '_blank');
+        window.location.href = mapsUrl;
       },
       (error) => {
         console.error('Error getting current location:', error);
+        alert('Unable to get your current location. Please make sure your location services are enabled.');
       }
     )
   }
